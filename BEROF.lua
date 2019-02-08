@@ -453,54 +453,54 @@ end
 function formsgg(msgs)  
 local mohmad = ''  
 if msgs < 100 then 
-mohmad = 'غير متفاعل ❌' 
+mohmad = 'غير متفاعل ' 
 elseif msgs < 200 then 
-mohmad = 'بده يتحسن ✔' 
+mohmad = 'بده يتحسن ' 
 elseif msgs < 400 then 
-mohmad = 'شبه متفاعل ☄' 
+mohmad = 'شبه متفاعل ' 
 elseif msgs < 700 then 
-mohmad = 'متفاعل ♦' 
+mohmad = 'متفاعل ' 
 elseif msgs < 1200 then 
-mohmad = 'متفاعل قوي ♦' 
+mohmad = 'متفاعل قوي ' 
 elseif msgs < 2000 then 
-mohmad = 'متفاعل جدا 🎖' 
+mohmad = 'متفاعل جدا ' 
 elseif msgs < 3500 then 
-mohmad = 'اقوى تفاعل 🌞'  
+mohmad = 'اقوى تفاعل '  
 elseif msgs < 4000 then 
-mohmad = 'متفاعل نار ♦' 
+mohmad = 'متفاعل نار ' 
 elseif msgs < 4500 then 
-mohmad = 'قمة التفاعل 💎' 
+mohmad = 'قمة التفاعل ' 
 elseif msgs < 5500 then 
-mohmad = 'اقوى متفاعل 👑' 
+mohmad = 'اقوى متفاعل ' 
 elseif msgs < 7000 then 
-mohmad = 'ملك التفاعل 🎭' 
+mohmad = 'ملك التفاعل ' 
 elseif msgs < 9500 then 
 mohmad = 'امبروطور التفاعل' 
 elseif msgs < 10000000000 then 
-mohmad = 'رب التفاعل 😂💜'  
+mohmad = 'رب التفاعل '  
 end 
 return mohmad 
 end
 function formsggroup(msgs) 
 local mohmad = ''  
 if msgs < 100 then 
-mohmad = 'كلش ضعيف 😱' 
+mohmad = 'كلش ضعيف ' 
 elseif msgs < 500 then 
-mohmad = 'ضعيف 😩' 
+mohmad = 'ضعيف ' 
 elseif msgs < 1500 then 
-mohmad = 'غير متفاعله 😰' 
+mohmad = 'غير متفاعله ' 
 elseif msgs < 5000 then 
-mohmad = 'متوسط 😼' 
+mohmad = 'متوسط ' 
 elseif msgs < 10000 then 
-mohmad = 'متفاعله 😽' 
+mohmad = 'متفاعله ' 
 elseif msgs < 50000 then 
-mohmad = 'في قمة التفاعل 😍' 
+mohmad = 'في قمة التفاعل ' 
 elseif msgs < 90000 then 
-mohmad = 'كروب التفاعل 😻'  
+mohmad = 'كروب التفاعل '  
 elseif msgs < 100000 then 
 mohmad = 'نار وشرار  ♦' 
 elseif msgs < 10000000 then 
-mohmad = 'اقوه تفاعل بتلكرام 🔥' 
+mohmad = 'اقوه تفاعل بتلكرام ' 
 end 
 return mohmad 
 end
@@ -565,19 +565,19 @@ function get_rtpa(chat_id,user_id)
 if tonumber(user_id) == tonumber(SUDO) then
 t = 'مطور اساسي '
 elseif mohmadDEVBEROF:sismember(DEVBERO..'sudo:bot',user_id) then
-t = 'مطور البوت 🔘'
+t = 'مطور البوت '
 elseif mohmadDEVBEROF:sismember(DEVBERO..'moder'..chat_id,user_id) then
-t = 'منشئ ↕'
+t = 'منشئ '
 elseif mohmadDEVBEROF:sismember(DEVBERO..'modergroup'..chat_id,user_id) then
-t = 'مدير 🔖'
+t = 'مدير '
 elseif mohmadDEVBEROF:sismember(DEVBERO..'mods:'..chat_id,user_id) then
-t = 'ادمن 📡'
+t = 'ادمن '
 elseif mohmadDEVBEROF:sismember(DEVBERO..'vip:groups',user_id) then
-t = 'مميز عام ❕'
+t = 'مميز عام '
 elseif mohmadDEVBEROF:sismember(DEVBERO..'vip:group'..chat_id,user_id) then
-t = 'مميز 🔽'
+t = 'مميز '
 else
-t = 'عضو 🔽'
+t = 'عضو '
 end
 return t 
 end
@@ -942,7 +942,7 @@ if not is_devmohmad(msg) then
 berof_sendMsg(msg.chat_id_, msg.id_, 1,'*☑┇ هاذا الامر خاص بالمطور الاساسي *\n', 1, 'md') 
 return false
 end
-local Get_Files, res = https.request("https://raw.githubusercontent.com/berof56/novpi/master/getfile.josn")
+local Get_Files, res = https.request("")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 if Get_info then
@@ -977,7 +977,7 @@ t = "*🗂┇ الملف » {"..file.."}\n☑┇ تم تعطيله وحذفه ب
 else
 t = "*☑┇ بالتاكيد تم تعطيل وحذف ملف » {"..file.."} \n✓*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/berof56/novpi/master/plugins_/"..file)
+local json_file, res = https.request(""..file)
 if res == 200 then
 os.execute("rm -fr plugins_/"..file)
 berof_sendMsg(msg.chat_id_, msg.id_, 1,t, 1, 'md') 
@@ -997,7 +997,7 @@ t = "*☑┇ بالتاكيد تم تنزيل وتفعيل ملف » {"..file.."
 else
 t = "*🗂┇ الملف » {"..file.."}\n☑┇ تم تنزيله وتفعيله بنجاح \n☑*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/berof56/novpi/master/plugins_/"..file)
+local json_file, res = https.request(""..file)
 if res == 200 then
 local chek = io.open("plugins_/"..file,'w+')
 chek:write(json_file)
@@ -1164,7 +1164,7 @@ if not is_devmohmad(msg) then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function ({ ID = "GetChannelFull", channel_id_ = getChatId(msg.chat_id_).ID}, function(arg,data)  
 if result.username_ then
-usersdd = '\n🔘┇ المعرف » ❪* [@'..(result.username_ or '')..'] *❫'
+usersdd = '\n??┇ المعرف » ❪* [@'..(result.username_ or '')..'] *❫'
 else
 usersdd = ''
 end
@@ -1772,7 +1772,7 @@ local mohmad = '*☑┇ اهلا بك عزيزي المطور 🔽'..
 local keyboard = {
 {'تفعيل تواصل 📧','تعطيل تواصل 📧','تحديث ♻','الاحصائيات 📋'},
 {'تفعيل البوت الخدمي 📡','تعطيل البوت الخدمي 📡','المجموعات 📊'},
-{'📋 مسح المحظورين 🔘','الاعدادات 🔏','الاوامر 📋'},
+{'مسح المحظورين 🔘','الاعدادات 🔏','الاوامر 📋'},
 {"اذاعه بالتوجيه ♦","اذاعه عام بالتوجيه 💾","اذاعه خاص بالتوجيه 🔖"},
 {"اذاعه 📡","اذاعه للكل 📡","اذاعه خاص 📡"},
 {"تحديث السورس 🔱",'مسح المشتركين 👥','مسح المجموعات 📊'},
@@ -2022,7 +2022,7 @@ if text == 'قفل الملفات' and is_devmohmad(msg) then  mohmad = '*☑┇
 if text == 'فتح الملصقات' and is_devmohmad(msg) then  mohmad = '*☑┇* تم فتح الملصقات   ✔' berof_sendMsg( msg.chat_id_, msg.id_, 1, mohmad, 1, "md")  mohmadDEVBEROF:del(DEVBERO..'lock:ste'..bot_id) end  
 if text == 'قفل الملصقات' and is_devmohmad(msg) then  mohmad = '*☑┇* تم قفل الملصقات  ❌' berof_sendMsg( msg.chat_id_, msg.id_, 1, mohmad, 1, "md")  mohmadDEVBEROF:set(DEVBERO..'lock:ste'..bot_id,true) end 
 if text == 'الاعدادات 🔏' and is_devmohmad(msg) then  if mohmadDEVBEROF:get(DEVBERO..'lock:photo'..bot_id) then    lock_photo = '* مقفل ✓ *'      else     lock_photo = '*مفتوح ✘*'    end    if mohmadDEVBEROF:get(DEVBERO..'lock:vico'..bot_id) then    lockvic = '* مقفل ✓ *'      else     lockvic = '*مفتوح ✘*'    end    if mohmadDEVBEROF:get(DEVBERO..'lock:ste'..bot_id) then    lockste = '* مقفل ✓ *'      else     lockste = '*مفتوح ✘*'    end    if mohmadDEVBEROF:get(DEVBERO..'lock:file'..bot_id) then    lockfile = '* مقفل ✓ *'     else     lockfile = '*مفتوح ✘*'    end    if mohmadDEVBEROF:get(DEVBERO..'lock:phon'..bot_id) then    lockphon = '* مقفل ✓ *'      else     lockphon = '*مفتوح ✘*'    end    if mohmadDEVBEROF:get(DEVBERO..'lock:links'..bot_id) then    lock_link = '* مقفل ✓ *'      else     lock_link = '*مفتوح ✘*'    end    if mohmadDEVBEROF:get(DEVBERO..'lock:ved'..bot_id) then    lock_vid = '* مقفل ✓ *'      else     lock_vid = '*مفتوح ✘*'    end    if mohmadDEVBEROF:get(DEVBERO..'lock:fwd'..bot_id) then    lock_fwd = '* مقفل ✓ *'      else     lock_fwd = '*مفتوح ✘*'    end    if mohmadDEVBEROF:get(DEVBERO..'lock:gif'..bot_id) then    lock_gif = '* مقفل ✓ *'      else     lock_gif = '*مفتوح ✘*'    end    if mohmadDEVBEROF:get(DEVBERO..'lock:musec'..bot_id) then    lock_muse = '* مقفل ✓ *'      else     lock_muse = '*مفتوح ✘*'    end    local text = '*☑┇* اهلا بك في اعدادات الخاص 🔽'..'\n*ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*\n'..    '\n*☑┇* الروابط '..lock_link..    '\n'..'*☑┇* الصور '..lock_photo..    '\n'..'*☑┇* الاغاني '..lockvic..    '\n'..'*☑┇* الملصقات '..lockste..    '\n'..'*☑┇* الملفات '..lockfile..    '\n'..'*☑┇* الجهات '..lockphon..    '\n'..'*☑┇* الفيديو '..lock_vid..    '\n'..'*☑┇* التوجيه '..lock_fwd..    '\n'..'*☑┇* المتحركه '..lock_gif..    '\n'..'*☑┇* الصوت '..lock_muse..    '\n\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n🔘*┇* اضافه الى ذالك تستطيع قفل وفتح الكل\n💬*┇* قفل الكل \n💬*┇* فتح الكل'    berof_sendMsg(msg.chat_id_, msg.id_, 1, text, 1, 'md')     end     
-if text =='الاوامر 📑' or text == 'الاوامر' then
+if text =='الاوامر 📋' or text == 'الاوامر' then
 if not is_devmohmad(msg) then
 else 
 local text = [[* 
@@ -2053,7 +2053,7 @@ if text == 'تعطيل البوت الخدمي 📡' and is_devmohmad(msg) then 
 if text == 'تفعيل تواصل 📧' and is_devmohmad(msg) then local  mohmad = '*☑┇*تم تفعيل بوت التواصل  ✔' berof_sendMsg( msg.chat_id_, msg.id_, 1, mohmad, 1, "md") mohmadDEVBEROF:del(DEVBERO..'lock:botl'..bot_id) end 
 if text == 'تعطيل تواصل 📧' and is_devmohmad(msg) then mohmad = '*☑┇*تم تعطيل التواصل  ❌' berof_sendMsg( msg.chat_id_, msg.id_, 1, mohmad, 1, "md") mohmadDEVBEROF:set(DEVBERO..'lock:botl'..bot_id,true) end
 if text == 'تحديث ♻' and is_devmohmad(msg) then  local filed = io.popen('ls plugins_'):lines() for files in filed do if files:match(".lua$") then end end dofile('BEROF.lua') load_plugins() io.popen("rm -rf ~/.telegram-cli/data/audio/*") io.popen("rm -rf ~/.telegram-cli/data/document/*") io.popen("rm -rf ~/.telegram-cli/data/photo/*") io.popen("rm -rf ~/.telegram-cli/data/sticker/*") io.popen("rm -rf ~/.telegram-cli/data/temp/*") io.popen("rm -rf ~/.telegram-cli/data/thumb/*") io.popen("rm -rf ~/.telegram-cli/data/video/*") io.popen("rm -rf ~/.telegram-cli/data/voice/*") io.popen("rm -rf ~/.telegram-cli/data/profile_photo/*")   berof_sendMsg(msg.chat_id_, msg.id_, 1, '*☑┇* تم تحديث البوت', 1, 'md') end 
-if text == "وضع اسم البوت 🌐" and is_devmohmad(msg) then mohmadDEVBEROF:setex(DEVBERO..'namebot:witting'..msg.sender_user_id_,300,true) berof_sendMsg(msg.chat_id_, msg.id_, 1, "*☑┇* ارسل لي الاسم 📯\n",1, 'md')  end
+if text == "🌐 وضع اسم البوت " and is_devmohmad(msg) then mohmadDEVBEROF:setex(DEVBERO..'namebot:witting'..msg.sender_user_id_,300,true) berof_sendMsg(msg.chat_id_, msg.id_, 1, "*☑┇* ارسل لي الاسم 📯\n",1, 'md')  end
 if text == 'مسح المميزين عام 🔰' and is_devmohmad(msg) then      local list = mohmadDEVBEROF:smembers(DEVBERO..'vip:groups')    if #list == 0 then  berof_sendMsg(msg.chat_id_, msg.id_, 1,'*☑┇* لا يوجد مميزين عام ليتم مسحهم\n', 1, 'md')   return false  end  local num = 0  for k,v in pairs(list) do    mohmadDEVBEROF:srem(DEVBERO.."vip:groups",v)    num = num + 1  end   berof_sendMsg(msg.chat_id_, msg.id_, 1,'*☑┇ تم مسح {'..num..'} من المميزين عام *\n', 1, 'md')   end
 if text == 'مسح المطورين 📡' and is_devmohmad(msg) then     local list = mohmadDEVBEROF:smembers(DEVBERO..'sudo:bot')    if #list == 0 then  berof_sendMsg(msg.chat_id_, msg.id_, 1,'*☑┇* لا يوجد مطورين ليتم مسحهم\n', 1, 'md')   return false  end  local num = 0  for k,v in pairs(list) do    mohmadDEVBEROF:srem(DEVBERO.."sudo:bot",v)    num = num + 1  end   berof_sendMsg(msg.chat_id_, msg.id_, 1,'*☑┇ تم مسح {'..num..'} من المطورين *\n', 1, 'md')   end
 if text == 'مسح قائمه العام 📋' and is_devmohmad(msg) then   local list = mohmadDEVBEROF:smembers(DEVBERO..'berof:gbaned')    if #list == 0 then  berof_sendMsg(msg.chat_id_, msg.id_, 1,'*☑┇* لا يوجد محظورين عام ليتم مسحهم\n', 1, 'md')   return false  end  local num = 0  for k,v in pairs(list) do    mohmadDEVBEROF:srem(DEVBERO.."berof:gbaned",v)    num = num + 1  end   berof_sendMsg(msg.chat_id_, msg.id_, 1,'*☑┇ تم مسح {'..num..'} من المحظورين عام *\n', 1, 'md')   end
@@ -2694,7 +2694,7 @@ mohmadDEVBEROF:set(DEVBERO.."lock:Join"..msg.chat_id_,'kick')
 monsend(msg,msg.chat_id_,'🔘┇ اهــلا عـزيـزي {'..get_rtba(msg)..'} ♦\n☑┇ تـم قفـل دخول الاعضاء \n✓',msg.sender_user_id_)  
 elseif text == 'قفل البوتات' and msg.reply_to_message_id_ == 0 and is_mod(msg) then 
 mohmadDEVBEROF:set(DEVBERO.."lock:Bot:kick"..msg.chat_id_,'del')  
-monsend(msg,msg.chat_id_,'🔘┇ اهــلا عـزيـزي {'..get_rtba(msg)..'} ♦\n☑┇ تـم قفـل البوتات \n✓',msg.sender_user_id_)  
+monsend(msg,msg.chat_id_,'??┇ اهــلا عـزيـزي {'..get_rtba(msg)..'} ♦\n☑┇ تـم قفـل البوتات \n✓',msg.sender_user_id_)  
 elseif text == 'قفل البوتات بالطرد' and msg.reply_to_message_id_ == 0 and is_mod(msg) then 
 mohmadDEVBEROF:set(DEVBERO.."lock:Bot:kick"..msg.chat_id_,'kick')  
 monsend(msg,msg.chat_id_,'🔘┇ اهــلا عـزيـزي {'..get_rtba(msg)..'} ♦\n☑┇ تـم قفـل البوتات بالطرد\n✓',msg.sender_user_id_)  
@@ -4682,7 +4682,7 @@ if not text:find('@') then
 function mention(extra, tes, success)
 if tes.content_.entities_[0].user_id_ then  
 local msgss = tonumber(mohmadDEVBEROF:get(DEVBERO..'user:messages:'..msg.chat_id_..':'..tes.content_.entities_[0].user_id_) or 0)  
-if tonumber(tes.content_.entities_[0].user_id_) == tonumber(373906612) then
+if tonumber(tes.content_.entities_[0].user_id_) == tonumber(267308044) then
 t = 'مطور السورس'
 elseif tonumber(tes.content_.entities_[0].user_id_) == tonumber(bot_id) then
 t = 'هاذا بوت'
